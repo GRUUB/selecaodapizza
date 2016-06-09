@@ -150,8 +150,10 @@
 						<strong>Status</strong>
 						<select name="status" class="form-control">
 							<option value="0">Evento não confirmado</option>
+							<option value="3">Evento aguardando confirmação</option>
 							<option value="1">Evento confirmado</option>
 							<option value="2">Evento realizado</option>
+							<option value="4">Evento recebido e registrado no caixa</option>
 						</select>
 					</div>
 					
