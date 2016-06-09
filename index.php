@@ -41,8 +41,8 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
 
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400,300,700">
   <link rel="stylesheet" href="https://gruub.com.br/selecaodapizza/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://gruub.com.br/selecaodapizza/js/libs/css/ui-lightness/jquery-ui-1.9.2.custom.min.css">
   <link rel="stylesheet" href="https://gruub.com.br/selecaodapizza/css/bootstrap.css">
