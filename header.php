@@ -86,6 +86,13 @@
 						</a>
 					</li>
 
+					<li <?php if($_GET['pag'] && $_GET['pag'] == "ingredients") { echo 'class="active"'; } ?>>
+						<a href="index.php?pag=ingredients&do=view">
+							<i class="fa fa-coffee"></i>
+							Ingredientes
+						</a>
+					</li>
+
 					<li <?php if($_GET['pag'] && $_GET['pag'] == "clients") { echo 'class="active"'; } ?>>
 						<a href="index.php?pag=clients&do=view">
 							<i class="fa fa-thumbs-up"></i>

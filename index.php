@@ -22,6 +22,7 @@
 	require_once "class/Promotions.class.php";
 	require_once "class/Clients.class.php";
 	require_once "class/Cash.class.php";
+	require_once "class/Ingredients.class.php";
 	require_once "class/Users.class.php";
 	
 	function dinheiro($valor) {
@@ -93,6 +94,8 @@
 						include "cash.php";
 					} elseif(isset($_GET['pag']) && $_GET['pag'] == "reports"){
 						include "reports.php";
+					} elseif(isset($_GET['pag']) && $_GET['pag'] == "ingredients"){
+						include "ingredients.php";
 					} elseif(isset($_GET['pag']) && $_GET['pag'] == "users"){
 						include "users.php";
 					} else { include "404.php"; }
@@ -150,6 +153,7 @@
 	
 	<!-- Mask Money -->
 	<script src="js/jquery.maskMoney.js" type="text/javascript"></script>
+	<script src="js/mask.js" type="text/javascript"></script>
 	
 	<script>
 		$('#data').datepicker({
@@ -157,6 +161,8 @@
 		});
 		
 		$("input.dinheiro").maskMoney({showSymbol:true, symbol:"R$", decimal:".", thousands:""});
+		
+		$("input.quantidade").maskMoney({showSymbol:false, symbol:"(kg/und) ", decimal:".", thousands:"", precision: 3});
 		
 		$('input[name=tipo]:radio').click(function() {
 			if($(this).val()=="despesa") {
@@ -383,6 +389,47 @@
 		}
 		
 		/* END CASH */
+		
+		
+		
+		
+		
+		/* START INGREDIENTS */
+	
+		// Inserir usuário
+		if(isset($_POST['insertIngredient'])){
+			extract($_POST);
+			
+			$ingrediente = new Ingrediente();
+			$ingrediente->Add($nome, $valor, $quantidade);
+				
+			echo $ingrediente->MsgOk;
+			echo $ingrediente->MsgNo;
+		}
+		
+		// Editar usuário
+		if(isset($_POST['editIngredient'])){
+			extract($_POST);
+			
+			$ingrediente = new Ingrediente();
+			$ingrediente->Edit($nome, $valor, $quantidade, $id);
+			
+			echo $ingrediente->MsgOk;
+			echo $ingrediente->MsgNo;
+		}
+		
+		// Remover usuário
+		if(isset($_POST['removeIngredient'])){
+			extract($_POST);
+			
+			$ingrediente = new Ingrediente();
+			$ingrediente->Remove($id);
+		
+			echo $ingrediente->MsgOk;
+			echo $ingrediente->MsgNo;
+		}
+		
+		/* END INGREDIENTS */
 		
 		
 		
