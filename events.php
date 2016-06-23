@@ -558,7 +558,13 @@
 														</div>
 														<div class="col-md-4">
 															<label for="ingredientes">Custo ingredientes</label>
-															<input type="text" name="ingredientes" id="ingredientes" class="form-control dinheiro" placeholder="R$">
+															<?php
+																$sql2 = "SELECT * FROM planilhas WHERE evento = {$linha->id}";
+																$query2 = $pdo->prepare($sql2);
+																$query2->execute();
+																$linha2 = $query2->fetch(PDO::FETCH_OBJ);
+															?>
+															<input type="text" name="ingredientes" id="ingredientes" class="form-control dinheiro" placeholder="R$" value="<?php echo $linha2->total; ?>">
 														</div>
 														<div class="col-md-4">
 															<label for="recebido">Valor recebido</label>
