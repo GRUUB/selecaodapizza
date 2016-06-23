@@ -19,10 +19,11 @@
 	
 	require_once "config.php";
 	require_once "class/Events.class.php";
+	require_once "class/Spreadsheets.class.php";
+	require_once "class/Ingredients.class.php";
 	require_once "class/Promotions.class.php";
 	require_once "class/Clients.class.php";
 	require_once "class/Cash.class.php";
-	require_once "class/Ingredients.class.php";
 	require_once "class/Users.class.php";
 	
 	function dinheiro($valor) {
@@ -86,6 +87,10 @@
 						include "main.php";
 					} elseif(isset($_GET['pag']) && $_GET['pag'] == "events"){
 						include "events.php";
+					} elseif(isset($_GET['pag']) && $_GET['pag'] == "spreadsheets"){
+						include "spreadsheets.php";
+					} elseif(isset($_GET['pag']) && $_GET['pag'] == "ingredients"){
+						include "ingredients.php";
 					} elseif(isset($_GET['pag']) && $_GET['pag'] == "promotions"){
 						include "promotions.php";
 					} elseif(isset($_GET['pag']) && $_GET['pag'] == "clients"){
@@ -94,8 +99,6 @@
 						include "cash.php";
 					} elseif(isset($_GET['pag']) && $_GET['pag'] == "reports"){
 						include "reports.php";
-					} elseif(isset($_GET['pag']) && $_GET['pag'] == "ingredients"){
-						include "ingredients.php";
 					} elseif(isset($_GET['pag']) && $_GET['pag'] == "users"){
 						include "users.php";
 					} else { include "404.php"; }
@@ -272,6 +275,38 @@
 		}
 		
 		/* END EVENTS */
+		
+		
+		
+		
+		
+		/* START SPREADSHEETS */
+		
+		// Confirmar planilha
+		if(isset($_POST['confirmSpreadsheet'])){
+			extract($_POST);
+			
+			$planilha = new Planilha();
+			$planilha->Confirm($id);
+		
+			echo $planilha->MsgOk;
+			echo $planilha->MsgNo;
+		}
+		
+		// Remover planilha
+		if(isset($_POST['removeSpreadsheet'])){
+			extract($_POST);
+			
+			$planilha = new Planilha();
+			$planilha->Remove($id);
+		
+			echo $planilha->MsgOk;
+			echo $planilha->MsgNo;
+		}
+		
+		
+		
+		/* END SPREADSHEETS */
 		
 		
 		
