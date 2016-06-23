@@ -23,7 +23,7 @@
 					
 					<div class="col-lg-4">
 						<strong>Quantidade</strong>
-						<input type="text" name="quantidade" class="form-control quantidade" />					
+						<input type="text" name="quantidade" class="form-control quantidade" value="1.000" />					
 					</div>
 					
 				</div> <!-- /.row -->
