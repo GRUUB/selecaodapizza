@@ -86,6 +86,14 @@
 						</a>
 					</li>
 
+					<li <?php if($_GET['pag'] && $_GET['pag'] == "spreadsheets") { echo 'class="active"'; } ?>>
+						<a href="index.php?pag=spreadsheets&do=view">
+							<i class="fa fa-list"></i>
+							Planilhas
+						</a>
+					</li>
+
+
 					<li <?php if($_GET['pag'] && $_GET['pag'] == "ingredients") { echo 'class="active"'; } ?>>
 						<a href="index.php?pag=ingredients&do=view">
 							<i class="fa fa-coffee"></i>
